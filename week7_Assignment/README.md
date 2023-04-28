@@ -21,16 +21,21 @@ class MyLoss(nn.Module):
 
 ## 결과
 최적의 epoch는 21이고
-RMSE값은 907
+RMSE값은 907.73
 up비율은 33%
+![스크린샷 2023-04-28 235945](https://user-images.githubusercontent.com/91838563/235182767-67912dbd-ce10-42f8-b7f4-8b4c58487ef0.png)
+
 
 
 ## 학습 그래프
 - 손실함수 : 가중치를 적용한 Custom Loss
-    ![CL](https://user-images.githubusercontent.com/91838563/235181765-c0462af9-6c78-4664-a202-159334350a9c.png)
+
+![CL](https://user-images.githubusercontent.com/91838563/235181765-c0462af9-6c78-4664-a202-159334350a9c.png)
 
 - RMSELoss
-    ![RL](https://user-images.githubusercontent.com/91838563/235181788-30d3a0d5-aa00-46e7-bede-fe90b60fe011.png)
+
+![RL](https://user-images.githubusercontent.com/91838563/235181788-30d3a0d5-aa00-46e7-bede-fe90b60fe011.png)
 
 - UP-rate
-    ![UR](https://user-images.githubusercontent.com/91838563/235181848-724de248-016c-4839-abc1-ba1ea7a0e273.png)
+
+![UR](https://user-images.githubusercontent.com/91838563/235181848-724de248-016c-4839-abc1-ba1ea7a0e273.png)

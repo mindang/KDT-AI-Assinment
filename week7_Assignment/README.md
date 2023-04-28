@@ -5,7 +5,7 @@
 ![KakaoTalk_20230428_190657296](https://user-images.githubusercontent.com/91838563/235179653-eb3c6bf9-509c-4e5b-9782-735a5aaaf96c.jpg)
 
 ## 손실함수
-빨리 예측한경우 : 늦게 예측한 경우 = 2 : 1 가중치를 줌
+빨리 예측한경우 : 늦게 예측한 경우 = 2 : 1 가중치를 줌 (루트 고려하여 4)
 
 class MyLoss(nn.Module):
     def __init__(self):
@@ -13,7 +13,7 @@ class MyLoss(nn.Module):
 
     def forward(self, y_pred, y_true):
         mse_loss = nn.MSELoss(reduction='none')                                            # 각 샘플별로 MSE 계산
-        result = torch.where(y_pred < y_true, torch.tensor(2.0), torch.tensor(1.0))        # 빨리 예측한 경우 가중치 2배
+        result = torch.where(y_pred < y_true, torch.tensor(4.0), torch.tensor(1.0))        # 빨리 예측한 경우 가중치 2배
         weighted_loss = result * mse_loss(y_pred, y_true)                                  # 각 샘플별로 가중치 곱
         summed_loss = torch.sum(weighted_loss)                                             # 손실 값들을 합산
         rmse_loss = torch.sqrt(summed_loss)                                                
@@ -21,22 +21,24 @@ class MyLoss(nn.Module):
         return rmse_loss
 
 ## 결과
-최적의 epoch는 21이고
-RMSE값은 907.73
-up비율은 33%
-![스크린샷 2023-04-28 235945](https://user-images.githubusercontent.com/91838563/235182767-67912dbd-ce10-42f8-b7f4-8b4c58487ef0.png)
+최적의 epoch는 37이고
+RMSE값은 956.9
+up비율은 27%
+
+
+![result](https://user-images.githubusercontent.com/91838563/235207459-1b0be7f7-6a65-4aaa-9fb0-2fcbafd0fac2.png)
 
 
 
 ## 학습 그래프
 - 손실함수 : 가중치를 적용한 Custom Loss
 
-![CL](https://user-images.githubusercontent.com/91838563/235181765-c0462af9-6c78-4664-a202-159334350a9c.png)
+![cl](https://user-images.githubusercontent.com/91838563/235207454-065863e1-947d-45f7-bb46-6b17cff2542c.png)
 
 - RMSELoss
 
-![RL](https://user-images.githubusercontent.com/91838563/235181788-30d3a0d5-aa00-46e7-bede-fe90b60fe011.png)
+![rlpng](https://user-images.githubusercontent.com/91838563/235207457-ee02cca8-ff4f-45dd-80a2-66a278870dd9.png)
 
 - UP-rate
 
-![UR](https://user-images.githubusercontent.com/91838563/235181848-724de248-016c-4839-abc1-ba1ea7a0e273.png)
+![up](https://user-images.githubusercontent.com/91838563/235207448-da68e69b-2ef9-4e8f-ae94-91a68081a440.png)

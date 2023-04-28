@@ -6,6 +6,7 @@
 
 ## 손실함수
 빨리 예측한경우 : 늦게 예측한 경우 = 2 : 1 가중치를 줌
+
 class MyLoss(nn.Module):
     def __init__(self):
         super().__init__()

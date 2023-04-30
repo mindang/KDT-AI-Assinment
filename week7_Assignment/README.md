@@ -25,23 +25,35 @@ class MyLoss(nn.Module):
 ## 결과
 1. 첫번째 모든 수치형 특성을 넣은 방법
     최적의 epoch는 37이고
+    
     RMSE값은 956.9
+    
     up비율은 27%
     
+![result](https://user-images.githubusercontent.com/91838563/235207459-1b0be7f7-6a65-4aaa-9fb0-2fcbafd0fac2.png)   
+
 2. 두번째 PCA를 통해 차원축소 후 넣는 방법
-    최적의 epoch는 37이고
-    RMSE값은 956.9
-    up비율은 27%
+
+![result](https://user-images.githubusercontent.com/91838563/235336995-dad77ba3-06b6-41a4-a204-1cf1bd8c7eab.png)
+
+    최적의 epoch는 14이고
+    
+    RMSE값은 1043.52
+    
+    up비율은 25%
+    
+
+결론 , 수치형 특성을 11 -> 6차원으로 줄였는데 RMSE는 100(1분40초)정도 차이나고 up비율은 오히려 좋아짐~!!
 
 
-![result](https://user-images.githubusercontent.com/91838563/235207459-1b0be7f7-6a65-4aaa-9fb0-2fcbafd0fac2.png)
 
 ## 모델 구조 : MLP
 ![KakaoTalk_20230428_190657296](https://user-images.githubusercontent.com/91838563/235179653-eb3c6bf9-509c-4e5b-9782-735a5aaaf96c.jpg)
 
 ## PCA 방법
+공분산행렬을 구한 후 고윳값 분해 후 고유벡터로 선형 변환
 
-
+![pca1](https://user-images.githubusercontent.com/91838563/235336989-c5808e9c-6bb4-41b3-81b7-5e8950f0303c.png)
 
 ## 학습 그래프
 - 손실함수 : 가중치를 적용한 Custom Loss

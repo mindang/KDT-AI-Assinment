@@ -34,16 +34,16 @@ class MyLoss(nn.Module):
 
 2. 두번째 PCA를 통해 차원축소 후 넣는 방법
 
-![result](https://user-images.githubusercontent.com/91838563/235336995-dad77ba3-06b6-41a4-a204-1cf1bd8c7eab.png)
+![스크린샷 2023-05-01 011727](https://user-images.githubusercontent.com/91838563/235364110-a5ed78c0-5ac0-48e3-9581-6a08c2ab879c.png)
 
     최적의 epoch는 14이고
     
-    RMSE값은 1043.52
+    RMSE값은 975.34
     
-    up비율은 25%
+    up비율은 27%
     
 
-결론 , 수치형 특성을 11 -> 6차원으로 줄였는데 RMSE는 100(1분40초)정도 차이나고 up비율은 오히려 좋아짐~!!
+결론 , 수치형 특성을 11 -> 6차원 , 범주형 특성 임베딩을 (148->89)으로 줄였는데 거의 동일한 성능
 
 
 

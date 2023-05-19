@@ -14,3 +14,6 @@ baseline 모델은 첨부된 파일의 hidden layer가 한개인 MLP모델로 �
 4. Test4는 mixup방식을 사용하였다.
 
 5. Test5-1와 5-2는 모델 size를 각각 절반 , 동일하게(10%낮음) 사용하여 효율적인 spinal구조를 사용하였다.
+
+# TF
+- 모델 size & 학습 시간이 효율적인 Test5.1 model을 사용했다.

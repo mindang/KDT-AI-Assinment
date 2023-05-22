@@ -4,7 +4,8 @@ baseline 모델은 첨부된 파일의 hidden layer가 한개인 MLP모델로 �
 # 성능 향상
 - 모든 모델은 baseline 모델size를 넘지 않도록 하였다.
 - torch,np,tf의 난수값을 123으로 고정했다.
-![image](https://github.com/mindang/KDT-AI-Assinment/assets/91838563/2dcadc49-438f-46ee-aafc-c3f38f1ddb90)
+![image](https://github.com/mindang/KDT-AI-Assinment/assets/91838563/fafa216a-f356-45bf-97b7-9d6363596e49)
+
 0. baseline모델은 첨부된 MLP모델이며 10epoch학습
 - 이후 Test는 train/valid/test로 나눠서 충분한 학습 진행
 
